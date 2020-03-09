@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='final-project-mobile-app-group-2_cohort-2'
