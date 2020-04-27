@@ -3,4 +3,28 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="size">
+        <item>Size</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+    </string-array>
+
+    <string-array name="color">
+        <item>Color</item>
+        <item>White</item>
+        <item>Orange-White </item>
+        <item>Orange-Black </item>
+        <item>Brown</item>
+        <item>Maroon</item>
+        <item>Yellow-Gold</item>
+    </string-array>
+
 </resources>

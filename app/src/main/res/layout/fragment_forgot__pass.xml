@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Forgot_Pass">
+    tools:context=".MainActivity"
+    android:padding="10dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/signup_container_rectangle">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"
+        android:textColor="#1E1F28"/>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Please, enter your email address. You will receive a link to create a new password via email."
+        android:textColor="#1E1F28"
+        android:layout_marginBottom="10dp" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_edittext_signup"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="12sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SEND"
+        android:textColor="#ffffff"
+        android:background="@drawable/signup_btn_rounded" />
+
+</LinearLayout>

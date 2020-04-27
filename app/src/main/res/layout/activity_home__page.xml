@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Home_Page_"
     android:layout_gravity="center"
     android:background="#1E1F28">
 
@@ -48,390 +48,233 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Uzuri Trends"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="25sp" />
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fillViewport="true"
-                android:layout_marginBottom="20dp"
-                android:scrollbars="none">
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/thumbnail"
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <ImageView
 
-                        <ImageView
-                            android:id="@+id/thumbnail"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/gaga" />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gaga"
+                        android:id="@+id/image1"/>
 
-                        <Button
-                            android:id="@+id/btn"
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="New"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
+                    <Button
+                        android:id="@+id/btn"
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="New"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gaga"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:id="@+id/image1_name"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@id/image1"/>
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:rating="3.5"
+                        android:stepSize="0.5"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_marginBottom="20dp"
+                        android:id="@+id/image1_rating"
+                        android:layout_below="@id/image1_name"/>
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/anna" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$30.00"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:id="@+id/image1_price"
+                        android:layout_below="@id/image1_rating"/>
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="New"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/anna" />
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="New"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/bella" />
+                </RelativeLayout>
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="New"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/lila" />
-
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="New"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-
-            </HorizontalScrollView>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Best Sellers"
+                android:layout_marginBottom="10dp"
+                android:text="Popular"
                 android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="25sp" />
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fillViewport="true"
-                android:scrollbars="none"
+                android:orientation="horizontal"
                 android:layout_marginBottom="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/lila" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/lila" />
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="View"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bella" />
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="View"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/bella" />
+                </RelativeLayout>
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
+            </LinearLayout>
 
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/anna" />
-
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/gaga" />
-
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-
-            </HorizontalScrollView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Men"
-                android:textColor="#ffffff"
-                android:textSize="25sp"
-                android:layout_marginBottom="10dp"/>
-
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fillViewport="true"
-                android:scrollbars="none"
+                android:orientation="horizontal"
                 android:layout_marginBottom="20dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/imena" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/imena" />
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="View"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1">
 
-                    </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/content_rectangle_rounded"
+                        android:padding="3dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/manzi" />
 
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/signup_btn_rounded"
+                        android:text="View"
+                        android:textColor="#ffffff"
+                        android:textSize="10sp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/manzi" />
+                </RelativeLayout>
 
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/mitali" />
-
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:layout_width="130dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/content_rectangle_rounded"
-                            android:scaleType="fitCenter"
-                            android:padding="3dp"
-                            android:src="@drawable/imena_kids" />
-
-                        <Button
-                            android:layout_width="40dp"
-                            android:layout_height="20dp"
-                            android:layout_margin="3dp"
-                            android:background="@drawable/signup_btn_rounded"
-                            android:text="View"
-                            android:textColor="#ffffff"
-                            android:textSize="10sp" />
-
-
-                    </RelativeLayout>
-
-                </LinearLayout>
-
-            </HorizontalScrollView>
+            </LinearLayout>
 
         </LinearLayout>
 
