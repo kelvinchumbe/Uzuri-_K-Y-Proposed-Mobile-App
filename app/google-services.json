@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "245387241142",
+    "firebase_url": "https://uzuri-ky.firebaseio.com",
+    "project_id": "uzuri-ky",
+    "storage_bucket": "uzuri-ky.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245387241142:android:4e2dff28d86d9211382817",
+        "android_client_info": {
+          "package_name": "com.example.final_project_mobile_app_group_2_cohort_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "245387241142-ens1iukgh6h9unlvah6rfmp8qor5sese.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbBTovPkjuGPoU4eP-SiWHpf6I2xF6rr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "245387241142-ens1iukgh6h9unlvah6rfmp8qor5sese.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
