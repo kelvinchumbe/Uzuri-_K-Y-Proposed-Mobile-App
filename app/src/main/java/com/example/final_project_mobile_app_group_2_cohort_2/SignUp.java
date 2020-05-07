@@ -50,7 +50,7 @@ public class SignUp extends Fragment {
                     Toast toast = Toast.makeText(getActivity(), "Login to your Account", Toast.LENGTH_SHORT);
                     toast.show();
 
-                    SignUp_Login.fragmentManager.beginTransaction().replace(R.id.signup_login_container, new Login_(),null).addToBackStack(null).commit();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.signup_login_container, new Login_(),null).addToBackStack(null).commit();
                 }
 
             }

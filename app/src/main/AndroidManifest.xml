@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.final_project_mobile_app_group_2_cohort_2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main_Page"></activity>
+        <activity android:name=".AdminUploadPage"></activity>
+        <activity android:name=".Main_Page" />
         <activity android:name=".Home_Page_" />
         <activity android:name=".Forgot_Pass" />
         <activity android:name=".Login_" />
         <activity android:name=".SignUp" />
-        <activity android:name=".SignUp_Login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

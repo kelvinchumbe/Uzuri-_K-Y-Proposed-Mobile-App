@@ -1,6 +1,5 @@
 package com.example.final_project_mobile_app_group_2_cohort_2;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -25,7 +24,6 @@ public class Main_Page extends AppCompatActivity {
         Home_Page_ home_page = new Home_Page_();
         ft.add(R.id.main_page_container, home_page, null);
         ft.commit();
-
 
 
     }

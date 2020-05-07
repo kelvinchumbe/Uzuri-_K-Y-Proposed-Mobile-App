@@ -3,7 +3,6 @@ package com.example.final_project_mobile_app_group_2_cohort_2;
 
 import android.app.AlertDialog;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,8 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.HashMap;
 
 
 /**
@@ -47,8 +44,8 @@ public class Login_ extends Fragment {
             @Override
             public void onClick(View v) {
                 if(validateInput()){
-                    final Intent homepage = new Intent(getActivity(), Main_Page.class);
-                    startActivity(homepage);
+                    final Intent mainpage = new Intent(getActivity(), Main_Page.class);
+                    startActivity(mainpage);
                     Toast toast = Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_SHORT);
                     toast.show();
                 }
@@ -59,7 +56,7 @@ public class Login_ extends Fragment {
         forgot_pass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignUp_Login.fragmentManager.beginTransaction().replace(R.id.signup_login_container, new Forgot_Pass(), null).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.signup_login_container, new Forgot_Pass(), null).addToBackStack(null).commit();
             }
         });
 
