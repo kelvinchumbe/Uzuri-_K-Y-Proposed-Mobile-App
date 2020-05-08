@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Delivery_Details"
+    android:orientation="vertical"
+    android:background="#1E1F28"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery Address Details"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Full Name"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Number"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:layout_marginBottom="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/raleway_semibold"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:fontFamily="@font/raleway_regular"
+                android:layout_gravity="center_vertical"
+                android:padding="15dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textSize="12sp"
+                android:textColor="#ffffff"
+                android:fontFamily="@font/raleway_semibold"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:fontFamily="@font/raleway_regular"
+                android:layout_gravity="center_vertical"
+                android:padding="15dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/raleway_semibold"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#ffffff"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Proceed"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/nearcomplete"
+        android:background="@drawable/signup_btn_rounded"
+        />
+
+</LinearLayout>

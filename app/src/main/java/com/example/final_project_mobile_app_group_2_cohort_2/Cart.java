@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -28,6 +29,7 @@ public class Cart extends Fragment {
     RecyclerView recyclerview_cart;
     private FirebaseFirestore db;
     private CartRecyclerAdapter cartRecyclerAdapter;
+    Button proceed;
 
     public Cart() {
         // Required empty public constructor
@@ -42,6 +44,7 @@ public class Cart extends Fragment {
 
         db = FirebaseFirestore.getInstance();
         recyclerview_cart = view.findViewById(R.id.recyclerview_cart);
+        proceed= view.findViewById(R.id.proceedcheckout);
 
         BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation_cart);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -65,6 +68,14 @@ public class Cart extends Fragment {
                         throw new IllegalStateException("Unexpected value: " + item.getItemId());
                 }
                 return true;
+            }
+        });
+
+        proceed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Delivery_Details(), null).addToBackStack(null).commit();
+
             }
         });
 

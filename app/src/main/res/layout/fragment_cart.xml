@@ -58,6 +58,17 @@
 
     </LinearLayout>
 
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/proceedcheckout"
+        android:text="Proceed to Checkout"
+        android:textColor="#ffffff"
+        android:layout_above="@id/bottom_navigation_cart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/signup_btn_rounded"/>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
