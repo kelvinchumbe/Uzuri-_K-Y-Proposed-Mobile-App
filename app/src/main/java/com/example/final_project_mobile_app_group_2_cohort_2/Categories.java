@@ -61,7 +61,7 @@ public class Categories extends Fragment {
                         Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Categories(), null).addToBackStack(null).commit();
                         break;
                     case R.id.action_cart:
-                        Toast.makeText(getActivity(), "Cart", Toast.LENGTH_SHORT).show();
+                        Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Cart(), null).addToBackStack(null).commit();
                         break;
                     case R.id.action_profile:
                         Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Profile(), null).addToBackStack(null).commit();

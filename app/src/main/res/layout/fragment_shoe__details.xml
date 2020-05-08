@@ -147,12 +147,13 @@
                     android:layout_marginRight="20dp"/>
 
                 <Button
+                    android:id="@+id/addToCart"
                     android:layout_width="0dp"
                     android:layout_weight="6"
                     android:layout_height="wrap_content"
                     android:text="Add to Bag"
                     android:textColor="#ffffff"
-                    android:drawableRight="@drawable/ic_local_mall_black_24dp"
+                    android:drawableRight="@drawable/ic_local_mall_white_24dp"
                     android:background="@drawable/cart_button"
                     android:gravity="center"
                     android:paddingTop="12dp"

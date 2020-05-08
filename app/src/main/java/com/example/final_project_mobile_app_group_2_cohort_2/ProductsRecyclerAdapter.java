@@ -36,6 +36,7 @@ public class ProductsRecyclerAdapter extends FirestoreRecyclerAdapter<Products, 
         bundle.putString("rating",String.valueOf(model.getRating()));
         bundle.putString("price",String.valueOf(model.getPrice()));
         bundle.putString("imageUrl",String.valueOf(model.getImage()));
+        bundle.putString("pId", String.valueOf(position));
         shoe_details.setArguments(bundle);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
