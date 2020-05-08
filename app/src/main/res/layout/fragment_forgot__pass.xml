@@ -48,14 +48,17 @@
             android:layout_marginBottom="10dp"/>
 
         <EditText
+            android:id="@+id/forgot_email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:inputType="textEmailAddress"
             android:textColor="#ffffff"
             android:background="@null"/>
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/forgot_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SEND"

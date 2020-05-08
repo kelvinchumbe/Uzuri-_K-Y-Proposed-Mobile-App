@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,6 +36,8 @@ public class Home_Page_ extends Fragment {
     private FirestoreRecyclerAdapter firestoreRecyclerAdapter;
     private FirestoreRecyclerAdapter firestoreRecyclerAdapter_popular;
     private FirebaseFirestore db;
+    private ProductsHomeRecyclerAdapter productsHomeRecyclerAdapter_trends;
+    private ProductsHomeRecyclerAdapter productsHomeRecyclerAdapter_popular;
 
 
     public Home_Page_() {
@@ -70,7 +73,8 @@ public class Home_Page_ extends Fragment {
                         Toast.makeText(getActivity(), "Cart", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.action_profile:
-                        Toast.makeText(getActivity(), "Profile", Toast.LENGTH_SHORT).show();
+                        Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Profile(), null).addToBackStack(null).commit();
+
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + item.getItemId());
@@ -79,88 +83,33 @@ public class Home_Page_ extends Fragment {
             }
         });
 
-        Query querytrends = db.collection("products").orderBy("name").limit(5);
-        Query querypopular = db.collection("products").orderBy("rating").limit(5);
-
-        FirestoreRecyclerOptions<Products> options = new FirestoreRecyclerOptions.Builder<Products>()
-                .setQuery(querytrends, Products.class)
-                .build();
-
-        firestoreRecyclerAdapter = new FirestoreRecyclerAdapter<Products, ProductsViewHolder>(options) {
-            @NonNull
-            @Override
-            public ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item, parent, false);
-                return new ProductsViewHolder(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull ProductsViewHolder holder, int position, @NonNull Products model) {
-                holder.name.setText(model.getName());
-                holder.price.setText("$" + String.valueOf(model.getPrice()));
-//                Glide.with(getContext()).load(model.getImage()).into(holder.product_image);
-                Picasso.get().load(model.getImage()).into(holder.product_image);
-
-            }
-
-            // View Holder
-        };
-
-        recyclerview_trends.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recyclerview_trends.setAdapter(firestoreRecyclerAdapter);
-
-
-        FirestoreRecyclerOptions<Products> options_popular = new FirestoreRecyclerOptions.Builder<Products>()
-                .setQuery(querypopular, Products.class)
-                .build();
-
-        firestoreRecyclerAdapter_popular = new FirestoreRecyclerAdapter<Products, ProductsViewHolder>(options_popular) {
-            @NonNull
-            @Override
-            public ProductsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_item, parent, false);
-                return new ProductsViewHolder(view);
-            }
-
-            @Override
-            protected void onBindViewHolder(@NonNull ProductsViewHolder holder, int position, @NonNull Products model) {
-                holder.name.setText(model.getName());
-                holder.price.setText("$" + String.valueOf(model.getPrice()));
-//                Glide.with(getContext()).load(model.getImage()).into(holder.product_image);
-                Picasso.get().load(model.getImage()).into(holder.product_image);
-            }
-
-            // View Holder
-        };
-
-        recyclerview_popular.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-        recyclerview_popular.setAdapter(firestoreRecyclerAdapter_popular);
-
         return view;
     }
 
-    private class ProductsViewHolder extends RecyclerView.ViewHolder {
-        private TextView name;
-        private TextView price;
-        private ImageView product_image;
-        private CardView cardView;
+    public void initRecyclerViews(){
+        Query querytrends = db.collection("products").orderBy("name").limit(5);
+        Query querypopular = db.collection("products").orderBy("rating").limit(5);
 
-        public ProductsViewHolder(@NonNull View itemView) {
-            super(itemView);
+        FirestoreRecyclerOptions<Products> optionstrends = new FirestoreRecyclerOptions.Builder<Products>()
+                .setQuery(querytrends, Products.class)
+                .build();
 
-            name = itemView.findViewById(R.id.name);
-            price = itemView.findViewById(R.id.price);
-            product_image = itemView.findViewById(R.id.product_image);
-            cardView = itemView.findViewById(R.id.card);
+        FirestoreRecyclerOptions<Products> optionspopular = new FirestoreRecyclerOptions.Builder<Products>()
+                .setQuery(querypopular, Products.class)
+                .build();
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Shoe_Details(), null).addToBackStack(null).commit();
-                }
-            });
+        productsHomeRecyclerAdapter_trends = new ProductsHomeRecyclerAdapter(optionstrends);
+        productsHomeRecyclerAdapter_popular = new ProductsHomeRecyclerAdapter(optionspopular);
 
-        }
+        recyclerview_trends.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        recyclerview_trends.setAdapter(productsHomeRecyclerAdapter_trends);
+
+        recyclerview_popular.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        recyclerview_popular.setAdapter(productsHomeRecyclerAdapter_popular);
+
+        productsHomeRecyclerAdapter_trends.startListening();
+        productsHomeRecyclerAdapter_popular.startListening();
+
     }
 
     @Override
@@ -181,7 +130,7 @@ public class Home_Page_ extends Fragment {
             firestoreRecyclerAdapter_popular.startListening();
         }
 
+        initRecyclerViews();
     }
-    
 
 }

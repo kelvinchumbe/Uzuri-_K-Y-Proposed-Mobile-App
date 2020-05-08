@@ -124,7 +124,8 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemBackground="@android:color/white"
         app:itemIconTint="#1E1F28"
-        app:itemTextColor="#1E1F28" >
+        app:itemTextColor="#1E1F28"
+        app:itemTextAppearanceActive="@font/raleway_regular">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
