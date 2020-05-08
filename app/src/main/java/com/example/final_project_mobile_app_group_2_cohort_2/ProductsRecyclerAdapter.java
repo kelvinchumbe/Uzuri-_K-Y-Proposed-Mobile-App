@@ -1,6 +1,6 @@
 package com.example.final_project_mobile_app_group_2_cohort_2;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,14 +28,20 @@ public class ProductsRecyclerAdapter extends FirestoreRecyclerAdapter<Products, 
 //                Glide.with(getContext()).load(model.getImage()).into(holder.product_image);
         Picasso.get().load(model.getImage()).into(holder.product_image);
 
+        final Shoe_Details shoe_details = new Shoe_Details();
+        Bundle bundle = new Bundle();
+        bundle.putString("name",model.getName());
+        bundle.putString("category",model.getCategory());
+        bundle.putString("description",model.getDescription());
+        bundle.putString("rating",String.valueOf(model.getRating()));
+        bundle.putString("price",String.valueOf(model.getPrice()));
+        bundle.putString("imageUrl",String.valueOf(model.getImage()));
+        shoe_details.setArguments(bundle);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Shoe_Details(), null).addToBackStack(null).commit();
-//                if(position != RecyclerView.NO_POSITION && listener != null){
-//                    listener.onItemClick(model.getName(), String.valueOf(model.getPrice()), String.valueOf(model.getRating()), model.getDescription(), model.getCategory(), model.getImage());
-//                }
+                Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, shoe_details, null).addToBackStack(null).commit();
             }
         });
     }
@@ -64,9 +70,4 @@ public class ProductsRecyclerAdapter extends FirestoreRecyclerAdapter<Products, 
 
         }
     }
-
-    public interface OnItemClickListener{
-        void onItemClick(String name, String price, String rating, String description, String category, String imageUrl);
-    }
-
 }

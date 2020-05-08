@@ -65,8 +65,9 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/gaga"
                     android:scaleType="centerCrop"
-                    android:id="@+id/gaga1"
-                    android:layout_marginRight="5dp"/>
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/prodImg"
+                    />
 
             </LinearLayout>
 
@@ -88,21 +89,21 @@
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
-                    android:text="Gaga"
                     android:fontFamily="@font/raleway_semibold"
                     android:textColor="#1E1F28"
                     android:textSize="24sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:id="@+id/prod_name"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:gravity="right"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="$30.00"
                     android:fontFamily="@font/raleway_semibold"
                     android:textColor="#1E1F28"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:id="@+id/prod_price"/>
 
             </LinearLayout>
 
@@ -110,28 +111,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#1E1F28"
-                android:text="Female Sandals"
                 android:fontFamily="@font/raleway_regular"
-                android:textSize="12sp"/>
+                android:textSize="12sp"
+                android:id="@+id/prod_categories"/>
 
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
-                android:rating="3.5"
                 android:stepSize="0.5"
                 style="?android:attr/ratingBarStyleSmall"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:id="@+id/prod_rating"/>
 
             <TextView
+                android:id="@+id/prod_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
                 android:textColor="#1E1F28"
                 android:textSize="12sp"
-                android:fontFamily="@font/raleway_regular"
-                android:text="Every pair is made of: Upper part of man made leather or canvas, Metal buckles and statement metal logo and Out-sole of recycled Tyre. \n\n An authentic concept by designers with a simple touch wearable every day." />
-
+                android:fontFamily="@font/raleway_regular"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

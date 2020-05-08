@@ -12,9 +12,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -56,7 +53,6 @@ public class Home_Page_ extends Fragment {
 
         recyclerview_trends = view.findViewById(R.id.recyclerview_trends);
         recyclerview_popular = view.findViewById(R.id.recyclerview_popular);
-
 
         BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

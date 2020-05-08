@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -106,6 +108,31 @@ public class Profile extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();//logout
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.signup_login_container, new Login_(),null).addToBackStack(null).commit();
+            }
+        });
+
+        BottomNavigationView bottomNavigationView = view.findViewById(R.id.bottom_navigation_profile);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_home:
+                        Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Home_Page_(), null).addToBackStack(null).commit();
+                        break;
+                    case R.id.action_categories:
+                        Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Categories(), null).addToBackStack(null).commit();
+                        break;
+                    case R.id.action_cart:
+                        Toast.makeText(getActivity(), "Cart", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.action_profile:
+                        Main_Page.fragmentManager_main.beginTransaction().replace(R.id.main_page_container, new Profile(), null).addToBackStack(null).commit();
+
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + item.getItemId());
+                }
+                return true;
             }
         });
 
